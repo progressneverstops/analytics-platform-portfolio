@@ -1,0 +1,15 @@
+user_id,event_name,event_ts,session_id,plan,amount_usd
+u1,signup,2025-12-01T09:10:00Z,s1,free,0
+u1,trial_start,2025-12-01T09:12:00Z,s1,trial,0
+u2,signup,2025-12-01T10:02:00Z,s2,free,0
+u2,trial_start,2025-12-02T11:15:00Z,s3,trial,0
+u2,convert_paid,2025-12-05T08:00:00Z,s4,paid,29
+u3,signup,2025-12-03T13:45:00Z,s5,free,0
+u3,trial_start,2025-12-03T13:47:00Z,s5,trial,0
+u3,trial_end,2025-12-10T09:00:00Z,s6,trial,0
+u4,signup,2025-12-04T17:20:00Z,s7,free,0
+u4,trial_start,2025-12-05T09:30:00Z,s8,trial,0
+u4,convert_paid,2025-12-06T12:00:00Z,s9,paid,29
+u5,signup,2025-12-05T08:55:00Z,s10,free,0
+u5,trial_start,2025-12-05T09:05:00Z,s10,trial,0
+u5,trial_cancel,2025-12-06T14:00:00Z,s11,trial,0
