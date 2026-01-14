@@ -1,0 +1,13 @@
+user_id,event_name,event_ts
+u001,signup,2024-02-01
+u001,onboarding_step_1,2024-02-01
+u001,onboarding_step_2,2024-02-01
+u001,onboarding_complete,2024-02-02
+u002,signup,2024-02-01
+u002,onboarding_step_1,2024-02-02
+u003,signup,2024-02-02
+u003,onboarding_step_1,2024-02-02
+u003,onboarding_step_2,2024-02-03
+u003,onboarding_complete,2024-02-04
+u004,signup,2024-02-03
+u004,onboarding_step_1,2024-02-03

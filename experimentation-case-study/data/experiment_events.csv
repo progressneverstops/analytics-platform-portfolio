@@ -1,0 +1,13 @@
+user_id,variant,exposed_date,converted,revenue_usd
+u001,control,2024-02-01,0,0
+u002,control,2024-02-01,1,19
+u003,control,2024-02-02,0,0
+u004,control,2024-02-02,1,29
+u005,control,2024-02-03,0,0
+u006,variant,2024-02-01,1,29
+u007,variant,2024-02-01,1,19
+u008,variant,2024-02-02,1,39
+u009,variant,2024-02-03,0,0
+u010,variant,2024-02-03,1,19
+u011,variant,2024-02-04,1,29
+u012,variant,2024-02-04,0,0
