@@ -3,483 +3,332 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Analytics Portfolio | Analytics, PM, SysAdmin</title>
+    <title>Joshua Harris | Interactive Resume</title>
     <style>
-        * {
+        /* Reset and Base Styles */
+        body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            overflow-x: auto;
+            overflow-y: hidden;
+            height: 100vh;
+            font-family: 'Courier New', monospace;
+            color: #0f0;
+            background-color: #000;
         }
 
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1e40af;
-            --secondary: #7c3aed;
-            --accent: #10b981;
-            --text: #1f2937;
-            --text-light: #6b7280;
-            --bg: #ffffff;
-            --bg-light: #f9fafb;
-            --bg-dark: #111827;
-            --border: #e5e7eb;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background: var(--bg);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
-            box-shadow: var(--shadow-lg);
-        }
-
-        header h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-        }
-
-        header p {
-            font-size: 1.25rem;
-            opacity: 0.95;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Navigation */
-        nav {
-            background: var(--bg);
-            border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: var(--shadow);
-        }
-
-        nav .container {
+        /* World Container */
+        .world {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 20px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: var(--text);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        nav a:hover {
-            color: var(--primary);
-        }
-
-        /* Main Content */
-        main {
-            padding: 4rem 0;
-        }
-
-        section {
-            margin-bottom: 5rem;
-        }
-
-        section h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text);
-        }
-
-        section p {
-            font-size: 1.125rem;
-            color: var(--text-light);
-            margin-bottom: 2rem;
-            max-width: 800px;
-        }
-
-        /* Project Grid */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .project-card {
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow);
-        }
-
-        .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary);
-        }
-
-        .project-card.featured {
-            border: 2px solid var(--primary);
-            background: linear-gradient(to bottom right, var(--bg), var(--bg-light));
-        }
-
-        .project-card h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            color: var(--text);
-        }
-
-        .project-card .badge {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .project-card p {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
-        }
-
-        .project-card .features {
-            list-style: none;
-            margin-bottom: 1.5rem;
-        }
-
-        .project-card .features li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
+            width: 500%;
+            height: 100vh;
             position: relative;
-            color: var(--text);
-            font-size: 0.95rem;
         }
 
-        .project-card .features li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: bold;
+        /* Sections */
+        .section {
+            flex: 1;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
         }
 
-        .project-card .link {
-            display: inline-block;
-            color: var(--primary);
+        /* Surface Level (Web Browser) */
+        .surface-level {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23111"/><rect x="10" y="10" width="80" height="80" fill="%23333" stroke="%230f0" stroke-width="2"/><rect x="15" y="15" width="70" height="20" fill="%230f0"/><text x="50" y="30" text-anchor="middle" fill="%23000" font-size="10">Browser</text></svg>');
+        }
+
+        /* Code Level (Text Editor) */
+        .code-level {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23111"/><rect x="10" y="10" width="80" height="80" fill="%23000" stroke="%230f0" stroke-width="2"/><text x="50" y="30" text-anchor="middle" fill="%230f0" font-size="10">Code Editor</text><text x="20" y="50" fill="%230f0" font-size="8">function() {</text><text x="20" y="60" fill="%230f0" font-size="8">  return 'Hello';</text><text x="20" y="70" fill="%230f0" font-size="8">}</text></svg>');
+        }
+
+        /* Data Level (Database) */
+        .data-level {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23111"/><rect x="10" y="10" width="80" height="80" fill="%23000" stroke="%230f0" stroke-width="2"/><text x="50" y="30" text-anchor="middle" fill="%230f0" font-size="10">Database</text><rect x="20" y="40" width="60" height="5" fill="%230f0"/><rect x="20" y="50" width="60" height="5" fill="%230f0"/><rect x="20" y="60" width="60" height="5" fill="%230f0"/></svg>');
+        }
+
+        /* Binary Level (Terminal) */
+        .binary-level {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23000"/><text x="10" y="20" fill="%230f0" font-size="8">$ ls -la</text><text x="10" y="30" fill="%230f0" font-size="8">drwxr-xr-x 1 user user 4096 Jan 1 12:00 projects</text><text x="10" y="40" fill="%230f0" font-size="8">-rw-r--r-- 1 user user 1024 Jan 1 12:00 resume.html</text></svg>');
+        }
+
+        /* Education Level (Graduation Cap) */
+        .education-level {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23111"/><path d="M30 70 L50 40 L70 70 L30 70 Z" fill="%230f0"/><rect x="45" y="40" width="10" height="30" fill="%230f0"/><text x="50" y="85" text-anchor="middle" fill="%230f0" font-size="10">Education</text></svg>');
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23111"/><rect x="20" y="20" width="30" height="20" fill="%23333" stroke="%230f0" stroke-width="2"/><text x="35" y="35" text-anchor="middle" fill="%230f0" font-size="8">💻</text><rect x="50" y="20" width="20" height="30" fill="%23333" stroke="%230f0" stroke-width="2"/><text x="60" y="40" text-anchor="middle" fill="%230f0" font-size="8">📱</text></svg>');
+        }
+
+        /* Detective Character */
+        #detective {
+            position: fixed;
+            bottom: 50px;
+            left: 20px;
+            width: 60px;
+            height: 90px;
+            z-index: 100;
+            transform: translateY(0);
+        }
+
+        #detective svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Content Boxes */
+        .content-box {
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 1px solid #0f0;
+            border-radius: 5px;
+            padding: 10px;
+            width: 300px;
+            color: #ccc;
+            font-size: 0.85em;
+            line-height: 1.3;
+            overflow-y: auto;
+            max-height: 80vh;
+        }
+
+        .content-box h2 {
+            color: #0f0;
+            margin-top: 0;
+            font-size: 1.1em;
+        }
+
+            .content-box h3 {
+            color: #0f0;
+                font-size: 1em;
+            }
+
+        .content-box ul {
+            padding-left: 15px;
+            margin: 5px 0;
+        }
+
+        .content-box p {
+            margin: 5px 0;
+        }
+
+        /* Contact Icons */
+        .contact-icons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contact-icons a {
+            color: #0f0;
             text-decoration: none;
-            font-weight: 600;
-            transition: color 0.2s;
+            font-size: 1.5em;
         }
 
-        .project-card .link:hover {
-            color: var(--primary-dark);
-        }
-
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .skill-item {
-            background: var(--bg-light);
-            padding: 1.5rem;
-            border-radius: 8px;
-            text-align: center;
-            border: 1px solid var(--border);
-        }
-
-        .skill-item strong {
-            display: block;
-            color: var(--text);
-            font-size: 1.125rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .skill-item span {
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--bg-dark);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-            margin-top: 5rem;
-        }
-
-        footer p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 1rem;
-        }
-
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive */
+        /* Responsive Adjustments */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
+            .world {
+                width: 300%;
             }
-
-            header p {
-                font-size: 1rem;
+            .section {
+                min-width: 100vw;
             }
-
-            nav ul {
-                flex-direction: column;
-                gap: 1rem;
+            #detective {
+                width: 30px;
+                height: 50px;
             }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
+            .content-box {
+                max-width: 90%;
+                padding: 10px;
+                font-size: 0.9em;
             }
-
-            section h2 {
-                font-size: 2rem;
+            .content-box h2 {
+                font-size: 1.2em;
             }
-        }
-
-        /* Code styling */
-        code {
-            background: var(--bg-light);
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
-            font-family: 'Monaco', 'Menlo', monospace;
-            font-size: 0.9em;
+            .content-box h3 {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
 <body>
-    <div style="background: var(--bg-light); padding: 2rem 0; border-bottom: 1px solid var(--border); text-align: center;">
-        <div class="container">
-            <div style="font-size: 1.5rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem;">J. Harris</div>
-            <div style="font-size: 1.125rem; color: var(--text-light); margin-bottom: 0.5rem;">Analytics · Data Products · Systems Execution</div>
-            <div style="font-size: 0.95rem; color: var(--text-light);">Portfolio demonstrating applied, production-oriented work (genericized for privacy)</div>
+    <!-- Detective Character -->
+    <div id="detective">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <!-- Head -->
+            <circle cx="50" cy="40" r="15" fill="#0f0"/>
+            <!-- Body -->
+            <rect x="45" y="55" width="10" height="30" fill="#0f0"/>
+            <!-- Arms (longer) -->
+            <line x1="45" y1="65" x2="20" y2="80" stroke="#0f0" stroke-width="2"/>
+            <line x1="55" y1="65" x2="80" y2="80" stroke="#0f0" stroke-width="2"/>
+            <!-- Screwdriver Emoji in Left Hand -->
+            <text x="10" y="85" font-size="16" fill="#0f0">🪛</text>
+            <!-- Magnifying Glass in Right Hand -->
+            <text x="85" y="85" font-size="16" fill="#0f0">🔎</text>
+            <!-- Legs -->
+            <line x1="48" y1="85" x2="45" y2="100" stroke="#0f0" stroke-width="2"/>
+            <line x1="52" y1="85" x2="55" y2="100" stroke="#0f0" stroke-width="2"/>
+        </svg>
+    </div>
+
+    <!-- World Container -->
+    <div class="world">
+        <!-- Surface Level (Web Browser) -->
+        <div class="section surface-level">
+            <div class="content-box">
+                <h2>💼 Surface Level</h2>
+                <h3>Summary</h3>
+                <p>
+                    Solutions Architect and Technical Program Manager focused on revenue systems, sourcing workflows, and cross-functional delivery.
+                    Designs internal, non-customer-facing tools and pipeline patterns that unify contract, billing, and vendor data into usable decision systems.
+                    Combines systems architecture, analytics, and program execution to move ambiguous initiatives from concept to operational playbooks.
+                </p>
+                <h3>Skills:</h3>
+                <ul>
+                    <li><strong>Figma</strong> (5★)</li>
+                    <li><strong>React</strong> (5★)</li>
+                    <li><strong>Next.js</strong> (5★)</li>
+                    <li><strong>Notion</strong> (5★)</li>
+                </ul>
+                <h3>Experience:</h3>
+                <p><strong>Recruiter & Design Systems Engineer</strong><br>Stealth wellness/education platform | Apr 2022–Present</p>
+                <ul>
+                    <li>Designed and maintained an internal <strong>Unified Revenue & Sourcing Console</strong> to validate pipeline and workflow patterns.</li>
+                    <li>Built reusable architecture patterns for integrating contract, billing, and vendor data.</li>
+                    <li>Defined process maps and implementation playbooks, reducing support escalations by <strong>30%</strong>.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Code Level (Text Editor) -->
+        <div class="section code-level">
+            <div class="content-box">
+                <h2>💻 Code Level</h2>
+                <h3>Skills:</h3>
+                <ul>
+                    <li><strong>Python (Jupyter)</strong> (5★)</li>
+                    <li><strong>Node.js</strong> (5★)</li>
+                    <li><strong>REST APIs</strong> (5★)</li>
+                    <li><strong>Bitbucket</strong> (5★)</li>
+                    <li><strong>Prettier</strong> (4★)</li>
+                    <li><strong>Git</strong> (4★)</li>
+                    <li><strong>JIRA</strong> (4★)</li>
+                    <li><strong>SQL</strong> (4★)</li>
+                </ul>
+                <h3>Experience:</h3>
+                <p><strong>Founding Team Member</strong><br>Montclair Fitness Center | May 2024–Present</p>
+                <ul>
+                    <li>Built launch operations frameworks covering onboarding, service delivery workflows, and reporting cadence.</li>
+                    <li>Defined KPI structures for engagement, retention, and service quality.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Data Level (Database) -->
+        <div class="section data-level">
+            <div class="content-box">
+                <h2>🗃️ Data Level</h2>
+                <h3>Skills:</h3>
+                <ul>
+                    <li><strong>SQLite</strong> (5★)</li>
+                    <li><strong>NoSQL</strong> (4★)</li>
+                    <li><strong>dbt</strong> (3★)</li>
+                    <li><strong>Tableau</strong> (3★)</li>
+                    <li><strong>Airflow</strong> (3★)</li>
+                </ul>
+                <h3>Experience:</h3>
+                <p><strong>Clerk/Sales (Analytics & Strategic Accounts)</strong><br>Costco | Aug 2018–Apr 2022</p>
+                <ul>
+                    <li>Developed retention and revenue optimization frameworks, preserving <strong>300+ memberships</strong>.</li>
+                    <li>Built reporting structures for regional teams, improving visibility into membership trends.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Binary Level (Terminal) -->
+        <div class="section binary-level">
+            <div class="content-box">
+                <h2>🖥️ Binary Level</h2>
+                <h3>Skills:</h3>
+                <ul>
+                    <li><strong>CI/CD</strong> (3★)</li>
+                    <li><strong>Git</strong> (4★)</li>
+                    <li><strong>Airflow</strong> (3★)</li>
+                    <li><strong>Prettier</strong> (4★)</li>
+                </ul>
+                <h3>Experience:</h3>
+                <p><strong>Personal Trainer</strong><br>YMCA | Jul 2018–Mar 2020</p>
+                <ul>
+                    <li>Designed modular program structures and documentation frameworks.</li>
+                    <li>Led implementation of the Functional Training Area with standardized setup and delivery practices.</li>
+                </ul>
+                <h3>Projects:</h3>
+                <ul>
+                    <li><strong>Unified Revenue & Sourcing Console</strong>: Internal ops tool for modeling revenue and procurement workflows.</li>
+                    <li><strong>Data Quality Pipeline</strong>: Automated validation and monitoring system.</li>
+                    <li><strong>A/B Experiments Framework</strong>: Complete A/B testing framework.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Education Section -->
+        <div class="section education-level">
+            <div class="content-box">
+                <h2>🎓 Education</h2>
+                <ul>
+                    <li><strong>MIT Professional Education</strong> — Artificial Intelligence Program (In Progress, Expected 2026)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="section contact">
+            <div class="content-box">
+                <h2>📞 Contact</h2>
+                <p>📧 <a href="mailto:progressneverstops@gmail.com" style="color: #0f0;">progressneverstops@gmail.com</a></p>
+                <p>📞 973-932-8969</p>
+                <p>🔗 <a href="https://www.linkedin.com/in/joshua-harris-smiley" style="color: #0f0;" target="_blank">LinkedIn</a></p>
+                <div class="contact-icons">
+                    <a href="mailto:progressneverstops@gmail.com" title="Email">📧</a>
+                    <a href="tel:973-932-8969" title="Phone">📞</a>
+                    <a href="https://www.linkedin.com/in/joshua-harris-smiley" target="_blank" title="LinkedIn">🔗</a>
+                </div>
+            </div>
         </div>
     </div>
-    <header>
-        <div class="container">
-            <h1>Data Analytics Portfolio</h1>
-            <p>Analytics, Product Management & System Administration Competence</p>
-        </div>
-    </header>
 
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- JavaScript for Detective Animation -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const detective = document.getElementById('detective');
+            const scrollPosition = window.scrollX;
+            const windowWidth = window.innerWidth;
 
-    <main>
-        <div class="container">
-            <section id="about">
-                <h2>About This Portfolio</h2>
-                <p>
-                    This portfolio showcases data analytics capabilities through <strong>generic, reusable patterns</strong> 
-                    extracted from production systems. All projects are domain-agnostic and demonstrate technical skills 
-                    without exposing proprietary business logic.
-                </p>
-                <p>
-                    Each project is self-contained with documentation, example code, and clear architecture patterns 
-                    that demonstrate real-world data engineering and analytics capabilities.
-                </p>
-            </section>
+            // Calculate the detective's position based on scroll
+            const maxScroll = 3000; // Adjust based on total scroll width
+            const constrainedScroll = Math.min(scrollPosition, maxScroll);
 
-            <section id="projects">
-                <h2>Featured Projects</h2>
-                <p>Three core projects demonstrating foundational to advanced data analytics skills:</p>
-                
-                <div class="projects-grid">
-                    <!-- Project 1: SQL Analytics -->
-                    <div class="project-card featured">
-                        <span class="badge">Featured</span>
-                        <h3>SQL Analytics Project</h3>
-                        <p>
-                            Structured SQL analytics system demonstrating event tracking, metrics aggregation, 
-                            and automated reporting using SQLite.
-                        </p>
-                        <ul class="features">
-                            <li>Event logging → SQL database</li>
-                            <li>Automatic SQL schema generation</li>
-                            <li>Analytics queries & aggregations</li>
-                            <li>Data quality validation</li>
-                            <li>Automated reporting</li>
-                        </ul>
-                        <a href="./01-sql-analytics-project/" class="link">View Project →</a>
-                    </div>
+            // Move the detective horizontally with the scroll
+            detective.style.left = `${20 + (constrainedScroll * 0.5)}px`;
 
-                    <!-- Project 2: Data Quality Pipeline -->
-                    <div class="project-card featured">
-                        <span class="badge">Featured</span>
-                        <h3>Data Quality Pipeline</h3>
-                        <p>
-                            Production-ready data quality validation and monitoring system with automated 
-                            quality checks and comprehensive reporting.
-                        </p>
-                        <ul class="features">
-                            <li>Generic validation framework</li>
-                            <li>Automated quality checks</li>
-                            <li>Schema & data integrity validation</li>
-                            <li>Quality metrics tracking</li>
-                            <li>Automated quality reports</li>
-                        </ul>
-                        <a href="./03-data-quality-pipeline/" class="link">View Project →</a>
-                    </div>
-
-                    <!-- Project 3: A/B Experiments -->
-                    <div class="project-card featured">
-                        <span class="badge">Featured</span>
-                        <h3>A/B Experiments Framework</h3>
-                        <p>
-                            Complete A/B testing framework with statistical analysis, variant assignment, 
-                            and results visualization for data-driven decision making.
-                        </p>
-                        <ul class="features">
-                            <li>Experiment management & tracking</li>
-                            <li>Variant assignment logic</li>
-                            <li>Statistical significance testing</li>
-                            <li>Results comparison & visualization</li>
-                            <li>Automated experiment reporting</li>
-                        </ul>
-                        <a href="./04-ab-experiments/" class="link">View Project →</a>
-                    </div>
-                </div>
-
-                <h3 style="margin-top: 3rem; margin-bottom: 1rem; font-size: 1.75rem;">Additional Projects</h3>
-                <div class="projects-grid">
-                    <!-- Dashboard Project -->
-                    <div class="project-card">
-                        <h3>Dashboard + Report</h3>
-                        <p>
-                            Reusable dashboard components with real-time metrics aggregation and 
-                            automated report generation.
-                        </p>
-                        <ul class="features">
-                            <li>Reusable dashboard components</li>
-                            <li>Real-time metrics display</li>
-                            <li>Automated report generation</li>
-                            <li>Data → Insight → Action workflow</li>
-                        </ul>
-                        <a href="./02-dashboard-report/" class="link">View Project →</a>
-                    </div>
-
-                    <!-- Core Library -->
-                    <div class="project-card">
-                        <h3>DataAnalyticsCore</h3>
-                        <p>
-                            Reusable library of generic patterns for logging, analytics, tracking, 
-                            processing, and storage.
-                        </p>
-                        <ul class="features">
-                            <li>Event logging patterns</li>
-                            <li>Metrics aggregation</li>
-                            <li>Change detection</li>
-                            <li>ETL pipeline patterns</li>
-                        </ul>
-                        <a href="./DataAnalyticsCore/" class="link">View Library →</a>
-                    </div>
-                </div>
-            </section>
-
-            <section id="skills">
-                <h2>Skills Demonstrated</h2>
-                <p>Technical capabilities showcased across all projects:</p>
-                
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <strong>SQL Analytics</strong>
-                        <span>Schema design, queries, aggregations</span>
-                    </div>
-                    <div class="skill-item">
-                        <strong>Data Quality</strong>
-                        <span>Validation, monitoring, reporting</span>
-                    </div>
-                    <div class="skill-item">
-                        <strong>Statistical Analysis</strong>
-                        <span>A/B testing, significance testing</span>
-                    </div>
-                    <div class="skill-item">
-                        <strong>Data Architecture</strong>
-                        <span>System design, data flows</span>
-                    </div>
-                    <div class="skill-item">
-                        <strong>ETL Pipelines</strong>
-                        <span>Data processing, transformation</span>
-                    </div>
-                    <div class="skill-item">
-                        <strong>Automation</strong>
-                        <span>Workflow orchestration, reporting</span>
-                    </div>
-                    <div class="skill-item">
-                        <strong>Visualization</strong>
-                        <span>Dashboards, charts, reports</span>
-                    </div>
-                    <div class="skill-item">
-                        <strong>Documentation</strong>
-                        <span>Architecture docs, READMEs</span>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>Data Analytics Portfolio</p>
-            <p>
-                <a href="https://github.com/progressneverstops/https-progressneverstops.github.io">View on GitHub</a> | 
-                Generic patterns and examples only - no proprietary business logic
-            </p>
-            <p style="margin-top: 1rem; font-size: 0.9rem; color: rgba(255, 255, 255, 0.6);">
-                This portfolio reflects independent work and genericized patterns; no proprietary or client data included.
-            </p>
-        </div>
-    </footer>
+            // Adjust y-axis based on abstraction level
+            if (scrollPosition < windowWidth) {
+                detective.style.bottom = '60px'; // Surface level
+            } else if (scrollPosition < windowWidth * 2) {
+                detective.style.bottom = '40px'; // Code level
+            } else if (scrollPosition < windowWidth * 3) {
+                detective.style.bottom = '50px'; // Data level
+            } else {
+                detective.style.bottom = '30px'; // Binary level
+            }
+        });
+    </script>
 </body>
 </html>
